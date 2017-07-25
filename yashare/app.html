@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>YaShare app - события</title>
+  <script>
+const f = (evt) => {
+  console.info('APP:', evt.type, document.readyState);
+};
+window.addEventListener('load', f, false);
+document.addEventListener('readystatechange', f, false);
+  </script>
+  <style>
+    .console {
+      font-family: monospace;
+      font-size: 14px;
+    }
+  </style>
+  <script src="../console.js"></script>
+</head>
+<body>
+  <a href="../">Назад</a>
+  <pre>
+    &lt;script&gt;
+    const f = (evt) => {
+      console.info('APP:', evt.type, document.readyState);
+    };
+    window.addEventListener('load', f, false);
+    document.addEventListener('readystatechange', f, false);
+    &lt;/script&gt;
+    &lt;script&gt;
+      document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+        const script = document.createElement(&#39;script&#39;);
+        script.type = &#39;text/javascript&#39;;
+        script.src = &#39;https://yastatic.net/share2/share.js&#39;;
+        script.onload = () =&gt; {
+          console.log(&#39;SHARE: load&#39;);
+          Ya.share2(&#39;ya-share2&#39;, {});
+        };
+
+        document.head.appendChild(script);
+      }, false)
+    &lt;/script&gt;
+    &lt;div class=&quot;ya-share2&quot; data-services=&quot;collections&quot;&gt;&lt;/div&gt;
+  </pre>
+  <div class="console">
+    <p class="log">Console:</p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://yastatic.net/share2/share.js';
+      script.onload = () => {
+        console.log('SHARE: load');
+        Ya.share2('ya-share2', {});
+      };
+
+      document.head.appendChild(script);
+    }, false)
+  </script>
+  <div class="ya-share2" data-services="collections"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>YaShare - события</title>
+  <script>
+const f = (evt) => {
+  console.info('APP:', evt.type, document.readyState);
+};
+window.addEventListener('load', f, false);
+document.addEventListener('readystatechange', f, false);
+  </script>
+  <style>
+    .console {
+      font-family: monospace;
+      font-size: 14px;
+    }
+  </style>
+  <script src="../console.js"></script>
+</head>
+<body>
+  <a href="../">Назад</a>
+  <pre>
+    &lt;script&gt;
+    const f = (evt) => {
+      console.info('APP:', evt.type, document.readyState);
+    };
+    window.addEventListener('load', f, false);
+    document.addEventListener('readystatechange', f, false);
+    &lt;/script&gt;
+    &lt;script src=&quot;https://yastatic.net/share2/share.js&quot;&gt;&lt;/script&gt;
+    &lt;div class=&quot;ya-share2&quot; data-services=&quot;collections&quot;&gt;&lt;/div&gt;
+  </pre>
+  <div class="console">
+    <p class="log">Console:</p>
+  </div>
+  <script src="https://yastatic.net/share2/share.js"></script>
+  <div class="ya-share2" data-services="collections"></div>
+</body>
+</html>
